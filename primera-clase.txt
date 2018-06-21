@@ -1,0 +1,14 @@
+
+
+// -d background
+
+docker run -d --name ubuntu01 ubuntu-basic:1.0
+
+
+// execute command
+
+docker exec -it ubuntu01 ls /
+
+
+// login into the container
+docker exec -it ubuntu01 bash
