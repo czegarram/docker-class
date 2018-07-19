@@ -27,3 +27,13 @@ services:
       - DB_NAME=app
     volumes:
       - ./postgresql:/var/lib/postgresql
+  web-php:
+    build:
+      dockerfile: dockerfile
+      context: images/web-php
+    container_name: "web-php"
+    ports:
+      - "8080:90"
+    environment:
+      - NGINX_GENERATE_DEFAULT_VHOST=false
+
