@@ -2,7 +2,7 @@ version: "2"
 services:
   mongodb:
     image: mongo:latest
-    container_name: "mongodb"
+    container_name: "mongodb-app"
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
@@ -14,12 +14,13 @@ services:
   postgresql:
     restart: always
     image: sameersbn/postgresql:10
+    container_name: "postgresql-app"
     ports:
       - "5432:5432"
     environment:
       - DEBUG=false
-      - DB_USER=
-      - DB_PASS=
-      - DB_NAME=
+      - DB_USER=root
+      - DB_PASS=root
+      - DB_NAME=app
     volumes:
       - ./postgresql:/var/lib/postgresql
