@@ -38,7 +38,8 @@ services:
       - NGINX_GENERATE_DEFAULT_VHOST=false
     volumes:
       - ./nginx:/data
-    depends_on: postgresql
+    depends_on: 
+      - postgresql
   node-web:
     image: "node:8"
     container_name: "nodeweb"
@@ -51,4 +52,5 @@ services:
     ports:
       - "8081:3000"
     command: "npm start"
-    depends_on: mongodb
+    depends_on: 
+      - mongodb
