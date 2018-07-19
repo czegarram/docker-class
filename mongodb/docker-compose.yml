@@ -11,3 +11,15 @@ services:
     ports:
       - 27017:27017
     command: mongod --smallfiles --logpath=/dev/null # --quiet
+  postgresql:
+    restart: always
+    image: sameersbn/postgresql:10
+    ports:
+      - "5432:5432"
+    environment:
+      - DEBUG=false
+      - DB_USER=
+      - DB_PASS=
+      - DB_NAME=
+    volumes:
+      - ./postgresql:/var/lib/postgresql
