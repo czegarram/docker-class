@@ -38,4 +38,14 @@ services:
       - NGINX_GENERATE_DEFAULT_VHOST=false
     volumes:
       - ./nginx:/data
-
+  node-web:
+    image: "node:8"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./node/app:/home/node/app
+    ports:
+      - "8081:3000"
+    command: "npm start"
