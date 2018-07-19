@@ -29,8 +29,8 @@ services:
       - ./postgresql:/var/lib/postgresql
   web-php:
     build:
-      dockerfile: dockerfile
       context: images/web-php
+      dockerfile: dockerfile      
     container_name: "web-php"
     ports:
       - "8080:90"
