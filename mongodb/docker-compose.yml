@@ -8,6 +8,7 @@ services:
       - MONGO_LOG_DIR=/dev/null
       - MONGODB_USER="root" 
       - MONGODB_PASS="root"
+      - MONGODB_DATABASE="app"
     volumes:
       - ./data/db:/data/db
     ports:
